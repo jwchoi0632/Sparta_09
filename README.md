@@ -61,9 +61,10 @@
     - 기존의 커스텀한 GameInstance의 SetUserName, GetUserName 함수의 구현부를 MyIDPlugin의 함수로 수정
   
     8.1. 에러 사항 :
+   
           - 플러그인으로 생성한 BP Library 클래스에 API를 빼먹어 C++에서 호출할 때 에러가 남
           - PIE 실행 환경을 단일 프로세스로 설정해둔 탓에 같은 값을 공유하는 것처럼 동작
   
-9. 실행 화면
+10. 실행 화면
    ![image](https://github.com/user-attachments/assets/08bb50cc-aec4-40ef-9641-34a80e451490)
 
