@@ -49,3 +49,7 @@
     - 유저가 채팅을 입력하면 서버에게 요청하여 서버의 GameState로부터 NetMulticast로 채팅 로그를 출력하도록 요청
     - 유저의 입력 내용을 서버에 전달
     - 플레이어의 턴이 되면 정답 입력 창을 출력하도록 로컬 GameInstance에 요청
+  
+8. 실행 화면
+   ![image](https://github.com/user-attachments/assets/08bb50cc-aec4-40ef-9641-34a80e451490)
+
