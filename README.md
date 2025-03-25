@@ -27,7 +27,7 @@
     - 게임의 룰에 따라 동작 수행
 
 
-5. GameState
+4. GameState
     - 서버의 GameMode나 PlayerController에 의해 호출되며, NetMulticast를 수행
     - 접속 중인 클라이언트에게 새로 유저가 접속했음을 채팅창에 출력하도록 클라이언트들의 로컬 GameInstance에 요청
     - 게임 진행 중 유저의 입력을 Log에 출력하도록 클라이언트들의 로컬 GameInstance에 요청
@@ -36,7 +36,7 @@
     - 서버는 UI를 출력하지 않으므로, Authority 체크하여 서버에는 요청하지 않도록 구현
 
 
-6. GameInstance
+5. GameInstance
     - 클라이언트의 동작에 필요한 기능 구현 및 데이터 관리
     - 유저의 이름을 저장 및 반환 (플러그인 구현 및 적용)
     - UISubsystem, LevelSubsystem 이라는 GameInstance Subsystem을 커스텀한 클래스 객체와 상호작용
@@ -44,14 +44,14 @@
     - LevelSubsystem에 Levvel 이동에 관한 기능 구현
 
 
-7. PlayerController
+6. PlayerController
     - 서버에 로그인 한 후, 서버의 GameMode로부터 넘버링을 전달받아 User + Number의 형태로 GameInstance에 유저 이름 저장
     - 유저가 채팅을 입력하면 서버에게 요청하여 서버의 GameState로부터 NetMulticast로 채팅 로그를 출력하도록 요청
     - 유저의 입력 내용을 서버에 전달
     - 플레이어의 턴이 되면 정답 입력 창을 출력하도록 로컬 GameInstance에 요청
 
   
-8. Plugin 구현
+7. Plugin 구현
     - 다른 프로젝트로부터 플레이어의 이름을 입력받거나 반환하는 MyIDPlugin 생성
     - 생성한 플러그인에 필요한 Set, Get 함수와 이름을 저장할 FName 타입의 변수를 static으로 구현
     - 구현한 플러그인 패키징
@@ -60,11 +60,11 @@
     - Build.cs 파일에 플러그인 모듈 추가
     - 기존의 커스텀한 GameInstance의 SetUserName, GetUserName 함수의 구현부를 MyIDPlugin의 함수로 수정
   
-    8.1. 에러 사항 :
+    7.1. 에러 사항 :
    
           - 플러그인으로 생성한 BP Library 클래스에 API를 빼먹어 C++에서 호출할 때 에러가 남
           - PIE 실행 환경을 단일 프로세스로 설정해둔 탓에 같은 값을 공유하는 것처럼 동작
   
-10. 실행 화면
+8. 실행 화면
    ![image](https://github.com/user-attachments/assets/08bb50cc-aec4-40ef-9641-34a80e451490)
 
