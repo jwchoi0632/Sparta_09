@@ -49,7 +49,21 @@
     - 유저가 채팅을 입력하면 서버에게 요청하여 서버의 GameState로부터 NetMulticast로 채팅 로그를 출력하도록 요청
     - 유저의 입력 내용을 서버에 전달
     - 플레이어의 턴이 되면 정답 입력 창을 출력하도록 로컬 GameInstance에 요청
+
   
-8. 실행 화면
+8. Plugin 구현
+    - 다른 프로젝트로부터 플레이어의 이름을 입력받거나 반환하는 MyIDPlugin 생성
+    - 생성한 플러그인에 필요한 Set, Get 함수와 이름을 저장할 FName 타입의 변수를 static으로 구현
+    - 구현한 플러그인 패키징
+    - 패키징 된 플러그인을 MultiPlayPrj 프로젝트의 Plugin 폴더에 복사
+    - 해당 플러그인이 플러그인 셋팅에 출력되고, 블루프린트에서도 함수로 출력되는 것을 확인
+    - Build.cs 파일에 플러그인 모듈 추가
+    - 기존의 커스텀한 GameInstance의 SetUserName, GetUserName 함수의 구현부를 MyIDPlugin의 함수로 수정
+  
+    - 에러 사항 :
+          - 플러그인으로 생성한 BP Library 클래스에 API를 빼먹어 C++에서 호출할 때 에러가 남
+          - PIE 실행 환경을 단일 프로세스로 설정해둔 탓에 같은 값을 공유하는 것처럼 동작
+  
+9. 실행 화면
    ![image](https://github.com/user-attachments/assets/08bb50cc-aec4-40ef-9641-34a80e451490)
 
